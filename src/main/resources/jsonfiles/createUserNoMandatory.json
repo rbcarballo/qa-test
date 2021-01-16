@@ -1,0 +1,15 @@
+{
+  "information": "User created with complete information",
+  "phone_numbers": [
+    {
+      "label": "Personal",
+      "value": "+34636027521"
+    }
+  ],
+  "emails": [
+    {
+      "label": "Personal",
+      "value": "r.barreras@hotmail.com"
+    }
+  ]
+}
