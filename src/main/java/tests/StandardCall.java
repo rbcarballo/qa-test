@@ -20,21 +20,20 @@ public class StandardCall extends TestBase {
     }
 
     @Test
-    public void testACTwoBrowsers() {
+    public void standardCall() {
         createInstance("Checking standard call with two browsers ");
         //login user 1
         behaviorSender = new TestBaseBehavior(testCaseReport);
         behaviorSender.web().loginPage().login(URL_AIRCALL, userSender);
-
         //login user 2
         behaviorReceiver = new TestBaseBehavior(testCaseReport);
         behaviorReceiver.web().loginPage().login(URL_AIRCALL, userReceiver);
         String phoneNumberReceiver = behaviorReceiver.web().keypad().getPhone();
-
         //User 1 make a call to user 2
         behaviorSender.web().keypad().standardCall(phoneNumberReceiver);
-
-
+        behaviorReceiver.web().call().acceptCall();
+        behaviorSender.web().call().checkStandardCallMenu();
+        behaviorSender.web().call().hangUp();
     }
 
     @After
