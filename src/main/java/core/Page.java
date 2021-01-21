@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -150,7 +151,7 @@ public abstract class Page {
         } catch (Exception e) {
             testCaseReport.logMessage(LogStatus.FAIL, "Was not possible to take screenshot");
         }
-        testCaseReport.logMessage(logStatus, testCaseReport.getTestReport().addScreenCapture(path + ".png"));
+        testCaseReport.logMessage(logStatus, testCaseReport.getTestReport().addScreenCapture(path + ".png"),message);
     }
 
     protected boolean waitForElementVisibility(WebElement element, long timeoutMilliseconds) {
@@ -244,7 +245,7 @@ public abstract class Page {
     protected String takePageScreenshot() throws IOException {
         TakesScreenshot ts = (TakesScreenshot) getDriver();
         File scrFile = ts.getScreenshotAs(OutputType.FILE);
-        String path = FINAL_PATH + "screenshot_" + new SimpleDateFormat("yyyyMMddhhmm").format(new Date());
+        String path = FINAL_PATH + "screenshot_" + new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         File DestFile = new File(path + ".png");
         FileUtils.copyFile(scrFile, DestFile);
         return path;
@@ -308,5 +309,17 @@ public abstract class Page {
         return element;
     }
 
+    public boolean isClickable (WebElement element){
+        try
+        {
+            WebDriverWait wait = new WebDriverWait(browser.getDriver(), 5);
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
 }
 

@@ -55,8 +55,9 @@ public class NavigationPage extends Page {
     }
 
     public void closeNavigation() {
-
-        logWebDriverScreenShot(LogStatus.PASS, "Page opened");
+        logWebDriverScreenShot(LogStatus.PASS, "Last page before closing");
+        //adding a sleep of one second due to in the case of two browsers screenshot can fail for having same time
+        sleep(1000);
         closeURL();
     }
 

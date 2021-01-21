@@ -30,7 +30,7 @@ public class KeypadPage extends Page {
 
     public void standardCall(String destinationPhone) {
         String prefix = destinationPhone.substring(0, 3);
-        String number = destinationPhone.substring(3, destinationPhone.length());
+        String number = destinationPhone.substring(3);
         click(flagButton);
         waitForElementVisibility(searchCountry, 5000);
         sendKeys(searchCountry, prefix);
@@ -38,6 +38,7 @@ public class KeypadPage extends Page {
         click(country);
         waitForElementVisibility(textBoxNumber);
         sendKeys(textBoxNumber, number);
+        click(getElement(By.id("root")));
         click(buttonMakeCall);
     }
 

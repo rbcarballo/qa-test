@@ -15,6 +15,14 @@ public class NavigationBehavior {
         this.browser = browser;
     }
 
+    public void checkBasicNavigation (){
+        navigateToToDo();
+        navigateToHistory();
+        navigateToKeypad();
+        navigateToPeople();
+        navigateToSettings();
+    }
+
     public void navigateToPeople() {
         final String METHOD_NAME = "navigateToPeople";
         NavigationPage navigationPage = new NavigationPage(browser);
