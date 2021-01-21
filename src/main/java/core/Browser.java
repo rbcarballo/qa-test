@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
@@ -21,7 +23,11 @@ public class Browser {
             String path = System.getProperty("user.dir");
             System.setProperty("webdriver.chrome.driver", path + "\\src\\main\\resources\\chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("profile.default_content_setting_values.notifications", 2);
+            options.setExperimentalOption("prefs", prefs);
             options.addArguments("--lang=en");
+            options.addArguments("use-fake-ui-for-media-stream");
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
 
