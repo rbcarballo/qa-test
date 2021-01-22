@@ -38,6 +38,10 @@ public class WebBehavior {
         return new PeopleBehavior(testCaseReport, browser);
     }
 
+    public TodoBehavior todo() {
+        return new TodoBehavior(testCaseReport, browser);
+    }
+
     public CallBehavior call() {
         return new CallBehavior(testCaseReport, browser);
     }

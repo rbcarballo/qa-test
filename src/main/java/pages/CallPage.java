@@ -31,8 +31,6 @@ public class CallPage extends Page {
     WebElement buttonTransfer;
 
 
-
-
     public CallPage(Browser browser) {
         super(browser);
     }
@@ -78,7 +76,11 @@ public class CallPage extends Page {
     }
 
     public void hangUp() {
+        waitForElementPresence(By.cssSelector("button[data-test='hangup-button']"), 30000);
         click(buttonHangUp);
+    }
 
+    public void rejectCall() {
+        click(buttonHangUp);
     }
 }

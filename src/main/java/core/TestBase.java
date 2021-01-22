@@ -1,6 +1,7 @@
 package core;
 
 import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -64,6 +65,15 @@ public class TestBase {
             }
         }
         return fileContent.toString();
+    }
+
+    protected void sleep(int timeoutInMilliSeconds) {
+        try {
+            Thread.sleep(timeoutInMilliSeconds);
+        } catch (InterruptedException e) {
+            testCaseReport.logMessage(LogStatus.ERROR, "InterruptedException", e.getMessage());
+            Thread.currentThread().interrupt();
+        }
     }
 }
 
