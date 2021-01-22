@@ -4,7 +4,7 @@ public class ACUser {
     private final String username;
     private final String password;
 
-    public ACUser(String username, String password){
+    public ACUser(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -13,7 +13,7 @@ public class ACUser {
         return username;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 }

@@ -1,4 +1,4 @@
-package behavior.web.navigation;
+package behavior.web.sections;
 
 import com.relevantcodes.extentreports.LogStatus;
 import core.Browser;

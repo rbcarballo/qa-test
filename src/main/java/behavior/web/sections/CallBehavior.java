@@ -1,4 +1,4 @@
-package behavior.web.navigation;
+package behavior.web.sections;
 
 import com.relevantcodes.extentreports.LogStatus;
 import core.Browser;
@@ -55,7 +55,4 @@ public class CallBehavior {
         callPage.hangUp();
         testCaseReport.logMessage(LogStatus.PASS, CLASS_NAME, METHOD_NAME);
     }
-
-
-
 }

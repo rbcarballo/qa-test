@@ -1,6 +1,6 @@
 package behavior.web;
 
-import behavior.web.navigation.*;
+import behavior.web.sections.*;
 import com.relevantcodes.extentreports.LogStatus;
 import core.Browser;
 import core.TestCaseReport;
@@ -50,5 +50,7 @@ public class WebBehavior {
         return new KeypadBehavior(testCaseReport, browser);
     }
 
-
+    public SettingsBehavior settings() {
+        return new SettingsBehavior(testCaseReport, browser);
+    }
 }

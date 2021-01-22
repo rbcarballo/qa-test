@@ -151,7 +151,7 @@ public abstract class Page {
         } catch (Exception e) {
             testCaseReport.logMessage(LogStatus.FAIL, "Was not possible to take screenshot");
         }
-        testCaseReport.logMessage(logStatus, testCaseReport.getTestReport().addScreenCapture(path + ".png"),message);
+        testCaseReport.logMessage(logStatus, testCaseReport.getTestReport().addScreenCapture(path + ".png"), message);
     }
 
     protected boolean waitForElementVisibility(WebElement element, long timeoutMilliseconds) {
@@ -309,15 +309,12 @@ public abstract class Page {
         return element;
     }
 
-    public boolean isClickable (WebElement element){
-        try
-        {
+    public boolean isClickable(WebElement element) {
+        try {
             WebDriverWait wait = new WebDriverWait(browser.getDriver(), 5);
             wait.until(ExpectedConditions.elementToBeClickable(element));
             return true;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return false;
         }
     }

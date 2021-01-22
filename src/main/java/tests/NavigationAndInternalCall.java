@@ -35,7 +35,7 @@ public class NavigationAndInternalCall extends TestBase {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         behavior.web().closeNavigation();
         behaviorReceiver.web().closeNavigation();
     }

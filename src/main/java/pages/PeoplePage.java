@@ -27,7 +27,7 @@ public class PeoplePage extends Page {
         sendKeys(searchTextBox, user.getUsername().split("@")[0]);
         waitForElementPresence(By.cssSelector("div[data-test='people-search-teammates-section']"), 5000);
         List<WebElement> elements;
-        waitForElementPresence(By.xpath(TEAM_MATE_SECTION),5000);
+        waitForElementPresence(By.xpath(TEAM_MATE_SECTION), 5000);
         elements = getElements(By.xpath(TEAM_MATE_SECTION));
 
         // check every single results in order to check if searched user is present

@@ -1,4 +1,4 @@
-package behavior.web.navigation;
+package behavior.web.sections;
 
 import com.relevantcodes.extentreports.LogStatus;
 import core.Browser;
@@ -15,7 +15,7 @@ public class NavigationBehavior {
         this.browser = browser;
     }
 
-    public void checkBasicNavigation (){
+    public void checkBasicNavigation() {
         navigateToToDo();
         navigateToHistory();
         navigateToKeypad();
@@ -57,6 +57,4 @@ public class NavigationBehavior {
         navigationPage.navigateToSettings();
         testCaseReport.logMessage(LogStatus.PASS, CLASS_NAME, METHOD_NAME);
     }
-
-
 }
