@@ -2,9 +2,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import tests.StandardCall;
-import tests.NavigationAndInternalCall;
-import tests.TestApiAC;
+import tests.*;
 
 import java.io.File;
 
@@ -13,6 +11,8 @@ import java.io.File;
         TestApiAC.class,
         NavigationAndInternalCall.class,
         StandardCall.class,
+        ArchiveAllTask.class,
+        AddingNewTask.class,
 }
 )
 public class TestSuite {
