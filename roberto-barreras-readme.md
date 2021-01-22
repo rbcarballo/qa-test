@@ -18,20 +18,26 @@ Also we have Page object for pages used in automation.
 In RestAssured test case I tried to follow a similar way, defining in a layer request, one up layer more we have behavior as well 
 and finally tests
 
+### **_Test plan_**
+https://docs.google.com/spreadsheets/d/1-naulKyRIrtOxx54ciQaFSWl8p2lECGRSRrcAMn1PkQ/edit?usp=sharing
+
+
 ### **_UI Test cases automated_.**
 
 1. ###### Internal call ######
-    - Login with user (rbcarballo@gmail.com / f77398b7)
-    - Do a small check for navigation bottom menu as a sanity
-    - Search in people tab for a teammate using part of email (qa+test)
-    - Assure every single results with our user
-    - If user is found create a call though call icon in call content 
-    - Check call is create correctly, take a screenshot 
+   - Login with user (rbcarballo@gmail.com / 4c5682af)
+   - Login with user (qa+test@aircall.io / f77398b7)
+   - With qa+test  
+   - Do a small check for navigation bottom menu as a sanity
+   - Search in people tab for a teammate using part of email (rbcarballo)
+   - Assure every single results with our user
+   - If user is found create a call though call icon in call content 
+   - Check call is create correctly
+   - Check menu inside call
+   - Hang up call
+   
 
 2. ###### Standard call ######
-   Main idea of this test was related with the possibility of accept a call and check different tools for standard call, 
-   for example possibility of adding notes or tags. I realized I have an issue, call created in automated test is 
-   not triggered in receiver user. In any case I left both logging in case I can fix it 
     - Login with userReceiver (rbcarballo@gmail.com / 4c5682af)
     - Login with userSender (qa+test@aircall.io/ f77398b7)
     - For receiver user get phone number from keyPad screen
@@ -39,6 +45,8 @@ and finally tests
     - Change flag country according phone number
     - Fill with phone number
     - Press call button 
+   - Check menu inside call, taking in account that in standard call Notes, Tag and Assign are shown and 
+     Start recording call is enabled 
 
 ### **_API Test cases automated_.**
 
